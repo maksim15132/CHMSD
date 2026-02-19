@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="description" content="Что мы сделали 4 — скоро в кино" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="assets/icon.png" type="image/png" />
+<title>ЧМСД 4</title>
+
+<style>
+:root{
+    --bg:#f5f6f8;
+    --text:#111;
+    --sub:#666;
+    --card:#ffffff;
+    --shadow1:0 10px 25px rgba(0,0,0,0.08);
+    --shadow2:0 2px 6px rgba(0,0,0,0.05);
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg:#0f0f12;
+        --text:#f1f1f1;
+        --sub:#a0a0a0;
+        --card:#1a1a20;
+        --shadow1:0 10px 30px rgba(0,0,0,0.6);
+        --shadow2:0 2px 10px rgba(0,0,0,0.4);
+    }
+}
+
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+}
+
+header{
+    margin-top:50px;
+    text-align:center;
+}
+
+.logo{
+    width:130px;
+    margin-bottom:18px;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.15));
+}
+
+h1{
+    margin:0;
+    font-size:44px;
+    letter-spacing:5px;
+    font-weight:700;
+}
+
+.subtitle{
+    margin-top:8px;
+    color:var(--sub);
+    font-size:16px;
+}
+
+.timer-box{
+    margin-top:70px;
+    background:var(--card);
+    padding:35px 50px;
+    border-radius:22px;
+    box-shadow:var(--shadow1), var(--shadow2);
+    text-align:center;
+    width:500px;
+}
+
+.section-title{
+    font-size:20px;
+    margin-bottom:25px;
+    color:var(--sub);
+    font-weight:600;
+}
+
+footer{
+    margin-top:auto;
+    padding:30px;
+    color:var(--sub);
+    font-size:14px;
+}
+
+@media (max-width:600px){
+    header{margin-top:25px;}
+    .logo{width:90px;}
+    h1{font-size:26px;letter-spacing:2px;}
+    .subtitle{font-size:13px;}
+    .timer-box{width:90%;padding:20px;margin-top:40px;}
+    footer{padding:20px;font-size:12px;text-align:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <img src="logo.png" class="logo" alt="ЧМСД логотип">
+    <h1>ЧМСД 4</h1>
+    <div class="subtitle">Скоро в кино</div>
+</header>
+
+<div class="timer-box">
+    <div class="section-title">До премьеры осталось:</div>
+    <div id="timer"></div>
+</div>
+
+<footer>
+    © ЧМСД объединение
+</footer>
+
+<script>
+const timerContainer = document.getElementById("timer");
+
+// проверяем ширину экрана
+if(window.innerWidth > 600){
+    // ПК → вставляем megatimer скрипт
+    const script = document.createElement("script");
+    script.src = "//megatimer.ru/get/a342678129c201109c1fab7a773d9f1c.js";
+    timerContainer.appendChild(script);
+} else {
+    // телефон → не показываем скрипт, а выводим ссылку
+    const link = document.createElement("a");
+    link.href = "https://megatimer.ru/mobile-version-link"; // <-- замени на свою ссылку
+    link.textContent = "Посмотреть таймер";
+    link.target = "_blank";
+    link.style.color = "#0077cc";
+    link.style.fontWeight = "600";
+    timerContainer.appendChild(link);
+}
+</script>
+
+</body>
+</html>
