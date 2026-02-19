@@ -69,6 +69,15 @@
         color:#777;
         font-size:14px;
     }
+
+    #timera342678129c201109c1fab7a773d9f1c{
+    display:none;
+    }
+
+    #timerf8eb7acb98eeb7484e17a1c1ca9dd3db{
+    display:none;
+    }
+
 </style>
 
 </head>
@@ -85,8 +94,33 @@
     <div class="section-title">До премьеры осталось:</div>
 
     <!-- ТАЙМЕР -->
-    <script src="//megatimer.ru/get/a342678129c201109c1fab7a773d9f1c.js"></script>
+    <script src="//megatimer.ru/get/a342678129c201109c1fab7a773d9f1c.js"></script> <!--пк таймер 1 версия-->
+    <script src="//megatimer.ru/get/f8eb7acb98eeb7484e17a1c1ca9dd3db.js"></script>
 </div>
+
+<button onclick="showTimer()">Показать таймер</button>
+<button onclick="hideTimer()">Скрыть таймер</button>
+<button onclick="showTimermb()">Показать таймер2</button>
+<button onclick="hideTimermb()">Скрыть таймер2</button>
+
+<script>
+
+    function showTimer(){
+        document.getElementById("timera342678129c201109c1fab7a773d9f1c").style.display="block";
+    }
+
+    function hideTimer(){
+    document.getElementById("timera342678129c201109c1fab7a773d9f1c").style.display="none";
+    }
+
+    function showTimermb(){
+        document.getElementById("timerf8eb7acb98eeb7484e17a1c1ca9dd3db").style.display="block";
+    }
+    
+    function hideTimermb(){
+        document.getElementById("timerf8eb7acb98eeb7484e17a1c1ca9dd3db").style.display="none";
+    }
+</script>
 
 <footer>
     © ЧМСД объединение
