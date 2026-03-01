@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="description" content="Что мы сделали 4 — скоро в кино" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="shortcut icon" href="icon.png" type="image/png" />
 <title>ЧТО МЫ СДЕЛАЛИ 4</title>
@@ -49,12 +50,22 @@
     .timer-box{
         margin-top:70px;
         background:white;
-        padding:35px 35px;
         border-radius:22px;
         box-shadow:
             0 10px 25px rgba(0,0,0,0.08),
             0 2px 6px rgba(0,0,0,0.05);
         text-align:center;
+    }
+
+    .timer-box{
+    padding:35px 50px;
+    }
+
+    /* если телефон вертикально */
+    @media (orientation: portrait){
+        .timer-box{
+            padding:35px 35px;
+        }
     }
 
     .section-title{
@@ -107,23 +118,27 @@
 
 <script>
 
-    function showTimer(){
-        document.getElementById("timera342678129c201109c1fab7a773d9f1c").style.display="block";
+function updateTimer(){
+
+    const isPortrait = window.innerHeight > window.innerWidth;
+
+    const pcTimer = document.getElementById("timera342678129c201109c1fab7a773d9f1c");
+    const mbTimer = document.getElementById("timer34c28ae02eebd63eeaa02f02d6c6609d");
+
+    if(isPortrait){
+        pcTimer.style.display = "none";
+        mbTimer.style.display = "block";
+    } else {
+        pcTimer.style.display = "block";
+        mbTimer.style.display = "none";
     }
 
-    function hideTimer(){
-    document.getElementById("timera342678129c201109c1fab7a773d9f1c").style.display="none";
-    }
+}
 
-    function showTimermb(){
-        document.getElementById("timer34c28ae02eebd63eeaa02f02d6c6609d").style.display="block";
-    }
-    
-    function hideTimermb(){
-        document.getElementById("timer34c28ae02eebd63eeaa02f02d6c6609d").style.display="none";
-    }
+window.addEventListener("load", updateTimer);
+window.addEventListener("resize", updateTimer);
+
 </script>
-
 <footer>
     © ЧМСД объединение
 </footer>
