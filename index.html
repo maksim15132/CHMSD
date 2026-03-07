@@ -57,6 +57,26 @@
         text-align:center;
     }
 
+    .watch-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 35px;
+    background:#111;
+    color:white;
+    font-size:18px;
+    font-weight:600;
+    border-radius:12px;
+    text-decoration:none;
+    transition:0.25s;
+    box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    }
+
+    .watch-btn:hover{
+    background:#333;
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
+    }
+
     .timer-box{
     padding:35px 50px;
     }
@@ -99,16 +119,15 @@
 <header>
     <img src="icon.png" class="logo" alt="ЧМСД логотип">
     <h1>ЧМСД 4</h1>
-    <div class="subtitle">Скоро в кино</div>
+    <div class="subtitle">Уже в кино</div>
 </header>
 
 <div class="timer-box">
-    <div class="section-title">До премьеры осталось:</div>
+    <h1>Смотреть:</h1>
 
-    <!-- ТАЙМЕР -->
-    <script src="//megatimer.ru/get/a342678129c201109c1fab7a773d9f1c.js"></script> <!--пк таймер 1 версия-->
-    <!-- <script src="//megatimer.ru/get/f8eb7acb98eeb7484e17a1c1ca9dd3db.js"></script>  -->
-    <script src="//megatimer.ru/get/34c28ae02eebd63eeaa02f02d6c6609d.js"></script>
+        <a class="watch-btn" href="https://t.me/AlexandrMontazher/15" target="_blank">
+        СМОТРЕТЬ ФИЛЬМ
+        </a>
 </div>
 
 <script>
@@ -140,4 +159,3 @@ window.addEventListener("resize", updateTimer);
 
 </body>
 </html>
-
